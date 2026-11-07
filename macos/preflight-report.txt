@@ -1,0 +1,265 @@
+PlayPort macOS preflight
+timestamp: 2026-10-11T15:41:58Z
+repo: /Users/kehua/Codex/Tesla-CarPlay/playport
+
+=== host ===
+x86_64
+ProductName:		macOS
+ProductVersion:		26.7.1
+BuildVersion:		25G241
+xcode-select: /Library/Developer/CommandLineTools
+v24.21.0
+11.19.0
+
+=== JDK 21 ===
+brew: missing
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+JDK21: PASS
+
+------------------------------------------------------------
+Gradle 9.5.0
+------------------------------------------------------------
+
+Build time:    2026-04-28 12:05:30 UTC
+Revision:      3fe117d68f3907790f3809f121aa36303a9151f8
+
+Kotlin:        2.3.20
+Groovy:        4.0.29
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  21.0.12.1 (Eclipse Adoptium 21.0.12.1+1-LTS)
+Daemon JVM:    Compatible with Java 25, any vendor, nativeImageCapable=false (from gradle/gradle-daemon-jvm.properties)
+OS:            Mac OS X 26.7.1 x86_64
+
+
+=== PlayPort JVM build ===
+Starting a Gradle Daemon (subsequent builds will be faster)
+Reusing configuration cache.
+> Task :server:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :protocol:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :server:processResources NO-SOURCE
+> Task :server:processTestResources NO-SOURCE
+> Task :protocol:processTestResources NO-SOURCE
+> Task :protocol:processResources NO-SOURCE
+> Task :protocol:compileKotlin UP-TO-DATE
+> Task :protocol:compileJava NO-SOURCE
+> Task :protocol:classes UP-TO-DATE
+> Task :protocol:jar UP-TO-DATE
+> Task :protocol:assemble UP-TO-DATE
+> Task :protocol:compileTestKotlin UP-TO-DATE
+> Task :protocol:compileTestJava NO-SOURCE
+> Task :protocol:testClasses UP-TO-DATE
+> Task :protocol:test UP-TO-DATE
+> Task :protocol:check UP-TO-DATE
+> Task :protocol:build UP-TO-DATE
+> Task :server:compileKotlin UP-TO-DATE
+> Task :server:compileJava NO-SOURCE
+> Task :server:classes UP-TO-DATE
+> Task :server:jar UP-TO-DATE
+> Task :server:startScripts UP-TO-DATE
+> Task :server:distTar UP-TO-DATE
+> Task :server:distZip UP-TO-DATE
+> Task :server:assemble UP-TO-DATE
+> Task :server:compileTestKotlin UP-TO-DATE
+> Task :server:compileTestJava NO-SOURCE
+> Task :server:testClasses UP-TO-DATE
+> Task :server:test UP-TO-DATE
+> Task :server:check UP-TO-DATE
+> Task :server:build UP-TO-DATE
+
+BUILD SUCCESSFUL in 9s
+11 actionable tasks: 11 up-to-date
+Configuration cache entry reused.
+
+=== Web client ===
+
+up to date, audited 18 packages in 3s
+
+8 packages are looking for funding
+  run `npm fund` for details
+
+1 high severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+
+> playport-client@0.1.0 test
+> node check.mjs
+
+Viewer input check passed: keyboard isolation, native controls, portrait/landscape coordinates, multi-touch, and release.
+
+> playport-client@0.1.0 build
+> tsc && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                 16.59 kB │ gzip:  4.72 kB
+dist/assets/index-DVhsUJ3q.css  20.75 kB │ gzip:  5.28 kB
+dist/assets/index-fJ5j8hYQ.js   30.39 kB │ gzip: 10.53 kB
+
+✓ built in 117ms
+
+=== macOS Bluetooth bridge ===
+built: /Users/kehua/Codex/Tesla-CarPlay/playport/macos/bt-bridge/bt-bridge
+/Users/kehua/Codex/Tesla-CarPlay/playport/macos/bt-bridge/bt-bridge: Mach-O 64-bit executable x86_64
+bt-bridge: address lookup timed out; grant Bluetooth permission to your terminal in System Settings > Privacy & Security > Bluetooth
+bt-bridge: local Bluetooth address unavailable
+
+=== Wi-Fi, Bluetooth, Bonjour, firewall ===
+
+Hardware Port: Ethernet
+Device: en0
+Ethernet Address: 3c:7d:0a:19:1f:0a
+
+Hardware Port: Thunderbolt Bridge
+Device: bridge0
+Ethernet Address: 82:40:03:60:b0:00
+
+Hardware Port: Wi-Fi
+Device: en1
+Ethernet Address: 88:66:5a:42:4a:1e
+
+Hardware Port: Thunderbolt 1
+Device: en2
+Ethernet Address: 82:40:03:60:b0:00
+
+Hardware Port: Thunderbolt 2
+Device: en3
+Ethernet Address: 82:40:03:60:b0:01
+
+VLAN Configurations
+===================
+en0 is not a Wi-Fi interface.
+** Error: Error obtaining wireless information.
+Bluetooth:
+
+      Bluetooth Controller:
+          Address: 88:66:5A:27:C6:F8
+          State: On
+          Chipset: BCM_4364B3
+          Discoverable: Off
+          Firmware Version: v91 c4210
+          Supported services: 0x392039 < HFP AVRCP A2DP HID Braille LEA AACP GATT SerialPort >
+          Transport: UART
+          Vendor ID: 0x004C (Apple)
+      Connected:
+          huaaln的妙控键盘:
+              Address: 40:E6:4B:8F:36:9D
+              Vendor ID: 0x004C
+              Product ID: 0x0267
+              Firmware Version: 2.0.6
+              Minor Type: Keyboard
+              Services: 0x800020 < HID ACL >
+          used的Magic Mouse:
+              Address: 20:91:DF:52:4F:E5
+              Vendor ID: 0x004C
+              Product ID: 0x0269
+              Firmware Version: 3.1.1
+              Minor Type: Mouse
+              Services: 0x800020 < HID ACL >
+      Not Connected:
+          AirPods - Find My:
+              Address: 9C:A9:C5:43:FC:D9
+              Vendor ID: 0x004C
+              Product ID: 0x201B
+              Case Version: 74.10.0
+              Firmware Version: 7​E93
+              Minor Type: Headphones
+              Serial Number: H70HQFJ2CK
+              Serial Number (Left): GN2HA204V0W0000B2Z
+              Serial Number (Right): GN2HA305H7V0000B31
+          apple的Magic Keyboard:
+              Address: 40:E6:4B:8E:C1:61
+              Vendor ID: 0x05AC
+              Product ID: 0x0267
+              Firmware Version: 0.0.0
+          Magic Keyboard:
+              Address: 3C:A6:F6:F2:B6:FD
+              Vendor ID: 0x004C
+              Product ID: 0x029A
+              Firmware Version: 2.0.6
+              Minor Type: Keyboard
+          Magic Keyboard with Numeric Keypad:
+              Address: C4:14:11:0D:D7:28
+              Vendor ID: 0x004C
+              Product ID: 0x026C
+              Firmware Version: 2.0.6
+              Minor Type: Keyboard
+          Magic Mouse 2:
+              Address: C4:0B:31:11:19:AC
+              Vendor ID: 0x004C
+              Product ID: 0x0269
+              Firmware Version: 3.1.1
+              Minor Type: Mouse
+          R13~R14:
+              Address: DD:16:63:EB:E0:D7
+              Firmware Version: 0.0.0
+              Minor Type: Headset
+          Rayner的AirPods Pro - Find My:
+              Address: 14:88:E6:CF:61:CD
+              Vendor ID: 0x004C
+              Product ID: 0x200E
+              Case Version: 1.4.1
+              Firmware Version: 6F21
+              Minor Type: Headphones
+              Serial Number: GX5DM9YK0C6L
+              Serial Number (Left): GXCDMCSU0C6K
+              Serial Number (Right): GXDDKDFT0C6J
+          丽佳的Magic Keyboard:
+              Address: 64:0B:D7:1A:B5:72
+              Vendor ID: 0x004C
+              Product ID: 0x0267
+              Firmware Version: 0.0.0
+              Minor Type: Keyboard
+          妙控板:
+              Address: D4:57:63:5B:AF:4D
+              Vendor ID: 0x004C
+              Product ID: 0x0265
+              Firmware Version: 3.1.8
+              Minor Type: Magic Trackpad
+
+dns-sd: available
+Run separately for a live browse: dns-sd -B _airplay._tcp local
+Listening TCP ports:
+COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe 541 kehua   13u  IPv4 0xc93a62de6e674d98      0t0  TCP *:7000 (LISTEN)
+ControlCe 541 kehua   14u  IPv6  0x261bb8ce2545d82      0t0  TCP *:7000 (LISTEN)
+Firewall state:
+Firewall is disabled. (State = 0)
+Manual permission checks required:
+  System Settings > Privacy & Security > Bluetooth: enable the Terminal/Codex app.
+  System Settings > General > AirDrop & Handoff: turn off AirPlay Receiver if port 7000 is occupied.
+
+=== Bluetooth layer ===
+The bridge exposes the real commands:
+  bt-bridge --list
+  bt-bridge --scan
+  bt-bridge --pair <iPhone Bluetooth address>
+Do not mark BT_PAIR_LAYER as PASS until --scan or --pair completes on the iMac.
+
+=== MFi (intentionally separate) ===
+AUTH_METHOD: BLOCKED (no local identity; use user-owned credentials or --mfi-server)
+
+=== status ===
+JDK21: PASS
+PLAYPORT_BUILD: PASS
+WEB_BUILD: PASS
+BT_BRIDGE_BUILD: PASS
+BT_BRIDGE_INTEL_RUNTIME: FAIL
+MAC_WIFI: PASS
+MAC_BLUETOOTH: PASS
+MDNS: PASS
+BT_PAIR_LAYER: NOT_TESTED
+AUTH: BLOCKED_OR_EXTERNAL
+
+Report written to /Users/kehua/Codex/Tesla-CarPlay/playport/macos/preflight-report.txt
